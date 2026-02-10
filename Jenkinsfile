@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven3.9'
+    }
+
+
     environment {
         DOCKER_IMAGE = "your-dockerhub-username/app:latest"
     }
