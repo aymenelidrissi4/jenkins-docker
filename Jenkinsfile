@@ -36,7 +36,7 @@ pipeline {
                         env.DOCKER_IMAGE = "${DOCKER_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
 
                         sh '''
-                            set +x
+#                            set +x
                             docker build -t $DOCKER_IMAGE .
                         '''
                     }
@@ -51,7 +51,7 @@ pipeline {
                          env.DOCKER_IMAGE = "${DOCKER_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
 
                          sh '''
-                             set +x
+#                             set +x
                              echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
                              docker push "$DOCKER_IMAGE"
                               docker logout
