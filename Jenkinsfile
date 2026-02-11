@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(
-                        credentialsId: 'dockerhub-credentials',
+                        credentialsId: 'f884ea78-b111-4d22-8445-4863584d4c76',
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'DOCKER_PASS'
                     )]) {
@@ -47,7 +47,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
+                    withCredentials([usernamePassword(credentialsId: 'f884ea78-b111-4d22-8445-4863584d4c76', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
                          env.DOCKER_IMAGE = "${DOCKER_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
 
                          sh '''
